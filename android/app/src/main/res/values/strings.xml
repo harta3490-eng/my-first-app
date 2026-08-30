@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">age counter </string>
+    <string name="title_activity_main">age counter </string>
+    <string name="package_name">com.agecounter.app</string>
+    <string name="custom_url_scheme">com.agecounter.app</string>
+</resources>
