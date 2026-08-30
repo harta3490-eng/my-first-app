@@ -1,220 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111827">
-  <meta name="description" content="Ageora - Your Age. Your Time. Your Moments.">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
-  <title>Ageora</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111827">
+    <meta name="description" content="Ageora - Your Age. Your Time. Your Moments.">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>Ageora</title>
 </head>
 
 <body>
 
 <div class="app">
 
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">🎂</div>
-      <div>
-        <h1>Ageora</h1>
-        <p>Your Age. Your Time. Your Moments.</p>
-      </div>
-    </div>
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo">🎂</div>
+            <div>
+                <h1>Ageora</h1>
+                <p>Your Age. Your Time. Your Moments.</p>
+            </div>
+        </div>
 
-    <button class="icon-btn" onclick="toggleDarkMode()" aria-label="Dark mode">🌙</button>
-  </header>
+        <button class="icon-btn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+            🌙
+        </button>
+    </header>
 
-  <section class="hero-card">
-    <div class="welcome">
-      <span>WELCOME TO AGEORA</span>
-      <h2>Life made memorable.</h2>
-      <p>
-        Manage birthdays, profiles, reminders and special moments
-        in one beautiful place.
-      </p>
-    </div>
+    <main>
 
-    <div class="profile-selector">
-      <label for="profileSelect">Active Profile</label>
-      <select id="profileSelect" onchange="switchProfile()"></select>
-    </div>
+        <section class="hero-card">
+            <div class="welcome">
+                <span>WELCOME TO AGEORA</span>
+                <h2>Know your time. Celebrate your moments.</h2>
+                <p>
+                    Create profiles for yourself, family and friends.
+                    Keep track of ages, birthdays and important moments.
+                </p>
+            </div>
 
-    <button class="primary-btn" onclick="showProfileForm()">
-      👤 Create / Edit Profile
-    </button>
-  </section>
+            <label for="profileSelect">Select Profile</label>
 
-  <section id="profileCard" class="result-card">
-    <div class="profile-photo" id="profilePhoto">👤</div>
-    <h2 id="profileName">No profile yet</h2>
-    <p id="profileEmail">Create your Ageora profile</p>
-  </section>
+            <div class="date-box">
+                <span>👤</span>
+                <select id="profileSelect" onchange="loadProfile()">
+                    <option value="0">Profile 1</option>
+                    <option value="1">Profile 2</option>
+                    <option value="2">Profile 3</option>
+                </select>
+            </div>
 
-  <section class="result-card" id="ageCard">
-    <div class="result-icon">🎂</div>
-    <div class="small-title">CURRENT AGE</div>
-    <div class="age-number" id="age">--</div>
+            <button class="primary-btn" onclick="calculateAge()">
+                🎂 Calculate Age
+            </button>
+        </section>
 
-    <div class="stats">
-      <div class="stat">
-        <strong id="years">--</strong>
-        <span>Years</span>
-      </div>
 
-      <div class="stat">
-        <strong id="months">--</strong>
-        <span>Months</span>
-      </div>
+        <section class="result-card">
 
-      <div class="stat">
-        <strong id="days">--</strong>
-        <span>Days</span>
-      </div>
-    </div>
+            <div class="result-icon">🎉</div>
 
-    <div class="birthday-box">
-      <span>🎉</span>
-      <div>
-        <strong id="nextBirthday">Next birthday</strong>
-        <p id="birthdayCountdown">Create a profile to begin.</p>
-      </div>
-    </div>
-  </section>
+            <div class="small-title">CURRENT AGE</div>
 
-  <section class="section">
-    <div class="section-heading">
-      <h2>Ageora Tools</h2>
-      <span>Everything in one place</span>
-    </div>
+            <div class="age-number" id="age">
+                —
+            </div>
 
-    <div class="feature-grid">
+            <div class="stats">
 
-      <button class="feature" onclick="openCalendar()">
-        <span>📅</span>
-        <strong>Calendar</strong>
-        <small>Plan important dates</small>
-      </button>
+                <div class="stat">
+                    <strong id="years">—</strong>
+                    <span>Years</span>
+                </div>
 
-      <button class="feature" onclick="setBirthdayReminder()">
-        <span>⏰</span>
-        <strong>Birthday Alarm</strong>
-        <small>Get a reminder</small>
-      </button>
+                <div class="stat">
+                    <strong id="months">—</strong>
+                    <span>Months</span>
+                </div>
 
-      <button class="feature" onclick="getLocation()">
-        <span>📍</span>
-        <strong>My Location</strong>
-        <small>Find your area</small>
-      </button>
+                <div class="stat">
+                    <strong id="days">—</strong>
+                    <span>Days</span>
+                </div>
 
-      <button class="feature" onclick="findNearby()">
-        <span>🗺️</span>
-        <strong>Nearby</strong>
-        <small>Food, malls, gyms & fun</small>
-      </button>
+            </div>
 
-      <button class="feature" onclick="openCamera()">
-        <span>📷</span>
-        <strong>Camera</strong>
-        <small>Take profile photo</small>
-      </button>
+            <div class="birthday-box">
 
-      <button class="feature" onclick="installApp()">
-        <span>📱</span>
-        <strong>Install Ageora</strong>
-        <small>Add to home screen</small>
-      </button>
+                <span>🎂</span>
 
-    </div>
-  </section>
+                <div>
+                    <strong id="birthdayTitle">
+                        Next Birthday
+                    </strong>
 
-  <section class="section nearby-section">
-    <div class="section-heading">
-      <h2>📍 Nearby</h2>
-      <span id="locationStatus">Location not selected</span>
-    </div>
+                    <p id="nextBirthday">
+                        Enter a date of birth to begin.
+                    </p>
+                </div>
 
-    <div class="nearby-grid">
-      <button onclick="searchNearby('restaurant')">🍽️ Restaurants</button>
-      <button onclick="searchNearby('eatery')">🥘 Eateries</button>
-      <button onclick="searchNearby('shopping mall')">🛍️ Shopping Malls</button>
-      <button onclick="searchNearby('gym')">🏋️ Gyms</button>
-      <button onclick="searchNearby('club')">🎉 Clubs</button>
-      <button onclick="searchNearby('hotel and suites')">🏨 Hotels & Suites</button>
-      <button onclick="searchNearby('amusement park')">🎢 Amusement Parks</button>
-      <button onclick="searchNearby('cinema')">🎬 Cinemas</button>
-    </div>
-  </section>
+            </div>
 
-  <section class="section about-card">
-    <div class="about-icon">✨</div>
-    <h2>About Ageora</h2>
-    <p>
-      Ageora is your personal age, birthday and lifestyle companion.
-      Keep track of your important moments, discover places nearby,
-      and make every birthday special.
-    </p>
-    <p class="tagline">Your Age. Your Time. Your Moments.</p>
-  </section>
+        </section>
 
-  <footer>
-    Ageora © 2026<br>
-    Built for memorable moments.
-  </footer>
+
+        <section class="section">
+
+            <div class="section-heading">
+                <h2>Profiles</h2>
+                <span>Up to 3 people</span>
+            </div>
+
+            <div class="feature-grid">
+
+                <button class="feature" onclick="editProfile(0)">
+                    <span>👤</span>
+                    <strong id="profileName0">Profile 1</strong>
+                    <small id="profileDob0">Not set</small>
+                </button>
+
+                <button class="feature" onclick="editProfile(1)">
+                    <span>👤</span>
+                    <strong id="profileName1">Profile 2</strong>
+                    <small id="profileDob1">Not set</small>
+                </button>
+
+                <button class="feature" onclick="editProfile(2)">
+                    <span>👤</span>
+                    <strong id="profileName2">Profile 3</strong>
+                    <small id="profileDob2">Not set</small>
+                </button>
+
+                <button class="feature" onclick="addProfile()">
+                    <span>➕</span>
+                    <strong>Add Profile</strong>
+                    <small>Create another profile</small>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <div class="section-heading">
+                <h2>Ageora Features</h2>
+                <span>Coming together</span>
+            </div>
+
+            <div class="feature-grid">
+
+                <button class="feature" onclick="showComingSoon('Calendar')">
+                    <span>📅</span>
+                    <strong>Calendar</strong>
+                    <small>Birthday events</small>
+                </button>
+
+                <button class="feature" onclick="showComingSoon('Reminders')">
+                    <span>⏰</span>
+                    <strong>Reminders</strong>
+                    <small>Never miss a birthday</small>
+                </button>
+
+                <button class="feature" onclick="showComingSoon('Location')">
+                    <span>📍</span>
+                    <strong>Celebration Location</strong>
+                    <small>Find nearby places</small>
+                </button>
+
+                <button class="feature" onclick="showComingSoon('Camera')">
+                    <span>📷</span>
+                    <strong>Camera</strong>
+                    <small>Capture your moments</small>
+                </button>
+
+                <button class="feature" onclick="showComingSoon('Security')">
+                    <span>🔐</span>
+                    <strong>Security</strong>
+                    <small>PIN & biometric access</small>
+                </button>
+
+                <button class="feature" onclick="showComingSoon('Nearby Places')">
+                    <span>🗺️</span>
+                    <strong>Nearby Places</strong>
+                    <small>Food, hotels, gyms & fun</small>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="about-card">
+
+            <div class="about-icon">✨</div>
+
+            <h2>About Ageora</h2>
+
+            <p>
+                Ageora is designed to help you understand your age,
+                remember birthdays and organize important moments
+                for yourself and the people you care about.
+            </p>
+
+            <p class="tagline">
+                Your Age. Your Time. Your Moments.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Ageora © 2026<br>
+        Your personal age & moments companion.
+    </footer>
 
 </div>
 
-<!-- Profile Modal -->
-<div id="profileModal" class="modal hidden">
-  <div class="modal-card">
-    <button class="close-btn" onclick="closeProfileForm()">✕</button>
-
-    <h2>👤 Ageora Profile</h2>
-    <p class="modal-subtitle">Create or update your profile.</p>
-
-    <label>Profile</label>
-    <select id="profileNumber">
-      <option value="0">Profile 1</option>
-      <option value="1">Profile 2</option>
-      <option value="2">Profile 3</option>
-    </select>
-
-    <label>Full Name *</label>
-    <input id="nameInput" type="text" placeholder="Enter full name">
-
-    <label>Email *</label>
-    <input id="emailInput" type="email" placeholder="name@example.com">
-
-    <label>Date of Birth *</label>
-    <input id="dobInput" type="date">
-
-    <label>Birthday Location</label>
-    <input id="locationInput" type="text" placeholder="e.g. Abuja">
-
-    <label>PIN *</label>
-    <input id="pinInput" type="password" inputmode="numeric"
-           maxlength="6" placeholder="4–6 digit PIN">
-
-    <label>Profile Photo</label>
-    <input id="photoInput" type="file" accept="image/*" capture="user">
-
-    <button class="primary-btn dark-btn" onclick="saveProfile()">
-      Save Profile
-    </button>
-  </div>
-</div>
-
-<input id="cameraInput" type="file" accept="image/*" capture="user" hidden>
 
 <script src="script.js"></script>
-
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js").catch(console.error);
-}
-</script>
 
 </body>
 </html>
