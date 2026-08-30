@@ -2,23 +2,175 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="theme-color" content="#111827">
+    <meta name="description" content="Ageora - Your Age. Your Time. Your Moments.">
+
+    <title>Ageora</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <img src="agefinder.png" alt="Age Finder Logo" width="120">
-<h1>🎂 Age Finder</h1>
+<div class="app">
 
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob">
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo">🎂</div>
+            <div>
+                <h1>Ageora</h1>
+                <p>Your Age. Your Time. Your Moments.</p>
+            </div>
+        </div>
 
-    <button onclick="calculateAge()">Find My Age</button>
+        <button class="icon-btn" id="themeBtn" aria-label="Change theme">
+            🌙
+        </button>
+    </header>
 
-    <h2 id="age"></h2>
-    <p id="nextBirthday"></p>
+    <main>
 
-    <script src="script.js"></script>
+        <!-- AGE CALCULATOR -->
+        <section class="hero-card">
+
+            <div class="welcome">
+                <span>✨ AGE CALCULATOR</span>
+                <h2>Discover your age</h2>
+                <p>Enter your date of birth and let Ageora calculate your journey through time.</p>
+            </div>
+
+            <label for="dob">Date of Birth</label>
+
+            <div class="date-box">
+                <span>📅</span>
+                <input type="date" id="dob">
+            </div>
+
+            <button class="primary-btn" onclick="calculateAge()">
+                Calculate My Age
+            </button>
+
+        </section>
+
+        <!-- RESULT -->
+        <section class="result-card" id="resultCard">
+
+            <div class="result-icon">🎉</div>
+
+            <p class="small-title">YOUR AGE</p>
+            <div id="age" class="age-number">—</div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong id="months">—</strong>
+                    <span>Months</span>
+                </div>
+
+                <div class="stat">
+                    <strong id="days">—</strong>
+                    <span>Days</span>
+                </div>
+
+                <div class="stat">
+                    <strong id="livedDays">—</strong>
+                    <span>Days Lived</span>
+                </div>
+
+            </div>
+
+            <div class="birthday-box">
+                <span>🎂</span>
+                <div>
+                    <strong>Next Birthday</strong>
+                    <p id="nextBirthday">Enter your birthday above</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- QUICK FEATURES -->
+        <section class="section">
+
+            <div class="section-heading">
+                <h2>Ageora</h2>
+                <span>Explore</span>
+            </div>
+
+            <div class="feature-grid">
+
+                <button class="feature">
+                    <span>📅</span>
+                    <strong>Calendar</strong>
+                    <small>Coming soon</small>
+                </button>
+
+                <button class="feature">
+                    <span>🔔</span>
+                    <strong>Birthday Alarm</strong>
+                    <small>Coming soon</small>
+                </button>
+
+                <button class="feature">
+                    <span>📍</span>
+                    <strong>Celebration</strong>
+                    <small>Coming soon</small>
+                </button>
+
+                <button class="feature">
+                    <span>📷</span>
+                    <strong>Camera</strong>
+                    <small>Coming soon</small>
+                </button>
+
+                <button class="feature">
+                    <span>📸</span>
+                    <strong>Memories</strong>
+                    <small>Coming soon</small>
+                </button>
+
+                <button class="feature">
+                    <span>🔐</span>
+                    <strong>Privacy</strong>
+                    <small>Coming soon</small>
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about-card">
+
+            <span class="about-icon">✨</span>
+
+            <h2>About Ageora</h2>
+
+            <p>
+                Ageora is your personal age, birthday and life-moments
+                companion. Calculate your age, remember important dates,
+                plan celebrations and keep your special moments close.
+            </p>
+
+            <p class="tagline">
+                Your Age. Your Time. Your Moments.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Ageora</p>
+        <p>Celebrate Every Moment 🎉</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
