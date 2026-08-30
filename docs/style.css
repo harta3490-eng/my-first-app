@@ -1,344 +1,466 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7fb;
-    color: #111827;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #111827;
 }
 
 body {
-    min-height: 100vh;
-    background: #f4f7fb;
+  min-height: 100vh;
+  background: #f4f7fb;
 }
 
 button,
-input {
-    font: inherit;
+input,
+select {
+  font: inherit;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .app {
-    width: 100%;
-    max-width: 650px;
-    margin: auto;
-    padding: 18px 16px 40px;
+  width: 100%;
+  max-width: 680px;
+  margin: auto;
+  padding: 18px 16px 45px;
 }
 
 .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
 }
 
 .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .logo {
-    width: 48px;
-    height: 48px;
-    display: grid;
-    place-items: center;
-    background: #111827;
-    border-radius: 15px;
-    font-size: 25px;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  background: #111827;
+  border-radius: 16px;
+  font-size: 25px;
+  box-shadow: 0 8px 20px rgba(17,24,39,.18);
 }
 
 .brand h1 {
-    font-size: 25px;
+  font-size: 26px;
 }
 
 .brand p {
-    font-size: 11px;
-    color: #6b7280;
-    margin-top: 3px;
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 3px;
 }
 
 .icon-btn {
-    width: 43px;
-    height: 43px;
-    border: 0;
-    border-radius: 14px;
-    background: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,.08);
+  width: 43px;
+  height: 43px;
+  border: 0;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,.08);
 }
 
 .hero-card {
-    background: #111827;
-    color: white;
-    border-radius: 26px;
-    padding: 25px 20px;
-    box-shadow: 0 15px 35px rgba(17,24,39,.18);
+  background: linear-gradient(145deg, #111827, #202938);
+  color: white;
+  border-radius: 27px;
+  padding: 25px 20px;
+  box-shadow: 0 15px 35px rgba(17,24,39,.18);
 }
 
 .welcome span {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    font-weight: bold;
-    opacity: .7;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  opacity: .7;
 }
 
 .welcome h2 {
-    font-size: 28px;
-    margin: 8px 0;
+  font-size: 29px;
+  margin: 8px 0;
 }
 
 .welcome p {
-    color: #cbd5e1;
-    line-height: 1.5;
-    font-size: 14px;
-    margin-bottom: 22px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  font-size: 14px;
+  margin-bottom: 22px;
 }
 
 label {
-    display: block;
-    font-size: 13px;
-    margin-bottom: 8px;
-    font-weight: bold;
+  display: block;
+  font-size: 13px;
+  margin: 13px 0 7px;
+  font-weight: bold;
 }
 
-.date-box {
-    background: white;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    padding: 0 13px;
-    margin-bottom: 13px;
+input,
+select {
+  width: 100%;
+  border: 1px solid #dbe1ea;
+  outline: none;
+  padding: 14px;
+  border-radius: 13px;
+  background: white;
+  color: #111827;
 }
 
-.date-box span {
-    font-size: 19px;
-}
-
-.date-box input {
-    width: 100%;
-    border: 0;
-    outline: none;
-    padding: 15px 10px;
-    background: transparent;
-    color: #111827;
+.profile-selector select {
+  margin-bottom: 12px;
 }
 
 .primary-btn {
-    width: 100%;
-    border: 0;
-    border-radius: 14px;
-    padding: 15px;
-    background: white;
-    color: #111827;
-    font-weight: bold;
-    font-size: 15px;
+  width: 100%;
+  border: 0;
+  border-radius: 14px;
+  padding: 15px;
+  background: white;
+  color: #111827;
+  font-weight: bold;
+  font-size: 15px;
 }
 
-.primary-btn:active {
-    transform: scale(.98);
+.dark-btn {
+  background: #111827;
+  color: white;
+  margin-top: 18px;
 }
 
 .result-card {
-    background: white;
-    border-radius: 24px;
-    padding: 25px 20px;
-    margin-top: 16px;
-    text-align: center;
-    box-shadow: 0 8px 28px rgba(0,0,0,.07);
+  background: white;
+  border-radius: 24px;
+  padding: 25px 20px;
+  margin-top: 16px;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(0,0,0,.07);
+}
+
+.profile-photo {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  background: #eef2f7;
+  font-size: 34px;
+  overflow: hidden;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#profileName {
+  font-size: 20px;
+}
+
+#profileEmail {
+  color: #6b7280;
+  font-size: 13px;
+  margin-top: 4px;
 }
 
 .result-icon {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .small-title {
-    color: #6b7280;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-top: 8px;
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 8px;
 }
 
 .age-number {
-    font-size: 42px;
-    font-weight: 800;
-    margin: 4px 0 20px;
+  font-size: 42px;
+  font-weight: 800;
+  margin: 4px 0 20px;
 }
 
 .stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 9px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
 }
 
 .stat {
-    background: #f4f7fb;
-    border-radius: 15px;
-    padding: 13px 5px;
+  background: #f4f7fb;
+  border-radius: 15px;
+  padding: 13px 5px;
 }
 
 .stat strong {
-    display: block;
-    font-size: 20px;
+  display: block;
+  font-size: 20px;
 }
 
 .stat span {
-    color: #6b7280;
-    font-size: 11px;
+  color: #6b7280;
+  font-size: 11px;
 }
 
 .birthday-box {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    gap: 12px;
-    background: #f4f7fb;
-    border-radius: 15px;
-    padding: 14px;
-    margin-top: 13px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 12px;
+  background: #f4f7fb;
+  border-radius: 15px;
+  padding: 14px;
+  margin-top: 13px;
 }
 
 .birthday-box > span {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .birthday-box strong {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 .birthday-box p {
-    font-size: 12px;
-    color: #6b7280;
-    margin-top: 3px;
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 3px;
 }
 
 .section {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 13px;
 }
 
 .section-heading h2 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .section-heading span {
-    color: #6b7280;
-    font-size: 12px;
+  color: #6b7280;
+  font-size: 11px;
 }
 
 .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
 .feature {
-    border: 0;
-    background: white;
-    border-radius: 18px;
-    padding: 18px 13px;
-    text-align: left;
-    box-shadow: 0 5px 18px rgba(0,0,0,.05);
+  border: 0;
+  background: white;
+  border-radius: 18px;
+  padding: 18px 13px;
+  text-align: left;
+  box-shadow: 0 5px 18px rgba(0,0,0,.05);
 }
 
 .feature span {
-    font-size: 25px;
-    display: block;
-    margin-bottom: 10px;
+  font-size: 25px;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .feature strong {
-    display: block;
-    font-size: 13px;
+  display: block;
+  font-size: 13px;
 }
 
 .feature small {
-    display: block;
-    color: #9ca3af;
-    margin-top: 4px;
-    font-size: 10px;
+  display: block;
+  color: #9ca3af;
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+.nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+}
+
+.nearby-grid button {
+  border: 0;
+  padding: 15px 10px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 5px 18px rgba(0,0,0,.05);
+  font-weight: 600;
+  color: #1f2937;
 }
 
 .about-card {
-    background: #111827;
-    color: white;
-    border-radius: 23px;
-    padding: 23px 20px;
-    margin-top: 25px;
+  background: #111827;
+  color: white;
+  border-radius: 23px;
+  padding: 23px 20px;
+  margin-top: 25px;
 }
 
 .about-icon {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .about-card h2 {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 .about-card p {
-    color: #cbd5e1;
-    font-size: 13px;
-    line-height: 1.6;
+  color: #cbd5e1;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .about-card .tagline {
-    color: white;
-    font-weight: bold;
-    margin-top: 13px;
+  color: white;
+  font-weight: bold;
+  margin-top: 13px;
 }
 
 footer {
-    text-align: center;
-    color: #9ca3af;
-    font-size: 11px;
-    margin-top: 28px;
-    line-height: 1.8;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 11px;
+  margin-top: 28px;
+  line-height: 1.8;
 }
 
-@media (min-width: 700px) {
-    .app {
-        padding-top: 35px;
-    }
+/* MODAL */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 600px;
+  max-height: 94vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 25px 25px 15px 15px;
+  padding: 23px 20px 28px;
+  position: relative;
+}
+
+.modal-card h2 {
+  margin-bottom: 5px;
+}
+
+.modal-subtitle {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 12px;
+  background: #f1f3f6;
 }
 
 /* DARK MODE */
 
 body.dark {
-    background: #080b12;
-    color: white;
+  background: #080b12;
+  color: white;
 }
 
 body.dark .result-card,
 body.dark .feature,
+body.dark .nearby-grid button,
 body.dark .icon-btn {
-    background: #151a24;
-    color: white;
+  background: #151a24;
+  color: white;
 }
 
 body.dark .stat,
 body.dark .birthday-box {
-    background: #202735;
+  background: #202735;
 }
 
 body.dark .stat span,
 body.dark .birthday-box p,
 body.dark .brand p,
-body.dark .section-heading span {
-    color: #9ca3af;
+body.dark .section-heading span,
+body.dark #profileEmail {
+  color: #9ca3af;
 }
 
-body.dark .date-box input {
-    color: #111827;
+body.dark .modal-card {
+  background: #151a24;
+  color: white;
+}
+
+body.dark input,
+body.dark select {
+  background: #202735;
+  color: white;
+  border-color: #374151;
+}
+
+@media (min-width: 700px) {
+  .app {
+    padding-top: 35px;
+  }
+
+  .modal {
+    align-items: center;
+  }
+
+  .modal-card {
+    border-radius: 25px;
+  }
+}
+
+@media (max-width: 380px) {
+  .feature-grid,
+  .nearby-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome h2 {
+    font-size: 25px;
+  }
+
+  .age-number {
+    font-size: 36px;
+  }
 }
